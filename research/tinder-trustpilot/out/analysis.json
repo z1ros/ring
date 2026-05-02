@@ -1,0 +1,538 @@
+{
+  "generatedAt": "2026-05-02T23:53:10.861Z",
+  "totalReviews": 2045,
+  "chipValidation": [
+    {
+      "chip": "no swipes",
+      "oneLine": "Users are exhausted by swiping and want matches based on something other than photos.",
+      "totalUnique": 83,
+      "shareOfAllReviews": "4.1%",
+      "signals": [
+        {
+          "name": "swipe fatigue / tired of swiping",
+          "keywords": [
+            "swipe fatigue",
+            "tired of swiping",
+            "tired swiping",
+            "endless swip",
+            "mindless swip"
+          ],
+          "valence": "anti",
+          "total": 0,
+          "negative": 0,
+          "sampleQuoteId": null
+        },
+        {
+          "name": "shallow / looks-only complaints",
+          "keywords": [
+            "superficial",
+            "shallow",
+            "looks only",
+            "looks-based",
+            "appearance only",
+            "judged on looks",
+            "just photos"
+          ],
+          "valence": "anti",
+          "total": 3,
+          "negative": 3,
+          "sampleQuoteId": "63926f800b7fc02715d90160"
+        },
+        {
+          "name": "swipe is the problem",
+          "keywords": [
+            "swipe",
+            "swiping",
+            "swipes"
+          ],
+          "valence": "anti",
+          "total": 80,
+          "negative": 64,
+          "sampleQuoteId": "68c3a72a206e62e5b27599e2"
+        }
+      ]
+    },
+    {
+      "chip": "voice ai",
+      "oneLine": "Users explicitly ask for voice / phone calls / actual conversations and don't get them.",
+      "totalUnique": 22,
+      "shareOfAllReviews": "1.1%",
+      "signals": [
+        {
+          "name": "ghosting",
+          "keywords": [
+            "ghost",
+            "ghosted",
+            "ghosting"
+          ],
+          "valence": "anti",
+          "total": 17,
+          "negative": 15,
+          "sampleQuoteId": "68e3dd74f36e368d3b2c5953"
+        },
+        {
+          "name": "wish for voice / phone / call",
+          "keywords": [
+            "voice call",
+            "phone call",
+            "facetime",
+            "video call",
+            "video chat",
+            "voice chat",
+            "voice note",
+            "call her",
+            "call him",
+            "speak to",
+            "talk to her",
+            "talk to him",
+            "talk to them",
+            "actual conversation",
+            "real conversation",
+            "have a conversation"
+          ],
+          "valence": "wish",
+          "total": 4,
+          "negative": 4,
+          "sampleQuoteId": "69a4a89aa17d108c852fa201"
+        },
+        {
+          "name": "no real conversations / dead chats",
+          "keywords": [
+            "no conversation",
+            "no conversations",
+            "no replies",
+            "no response after match",
+            "match disappear",
+            "dead chat",
+            "dead app"
+          ],
+          "valence": "anti",
+          "total": 2,
+          "negative": 2,
+          "sampleQuoteId": "6996c895748c7e1dcc233158"
+        }
+      ]
+    },
+    {
+      "chip": "1 ring · 1 date",
+      "oneLine": "Users want fewer-but-real matches. The volume model produces no real outcomes.",
+      "totalUnique": 72,
+      "shareOfAllReviews": "3.5%",
+      "signals": [
+        {
+          "name": "want to actually meet someone",
+          "keywords": [
+            "meet in person",
+            "actually meet",
+            "real date",
+            "real person",
+            "real people",
+            "real human",
+            "real human being",
+            "meet someone real",
+            "actual date",
+            "in person"
+          ],
+          "valence": "wish",
+          "total": 18,
+          "negative": 13,
+          "sampleQuoteId": "691b721c6ddf98e729b94623"
+        },
+        {
+          "name": "no matches / 0 matches",
+          "keywords": [
+            "no matches",
+            "0 matches",
+            "zero matches",
+            "no one matches"
+          ],
+          "valence": "anti",
+          "total": 16,
+          "negative": 14,
+          "sampleQuoteId": "5f2f08e51a5a690788a4bdd8"
+        },
+        {
+          "name": "no likes / 0 likes",
+          "keywords": [
+            "no likes",
+            "0 likes",
+            "zero likes",
+            "no one likes me"
+          ],
+          "valence": "anti",
+          "total": 36,
+          "negative": 34,
+          "sampleQuoteId": "6985b56689214d60b8fdb07b"
+        },
+        {
+          "name": "want quality not quantity",
+          "keywords": [
+            "quality match",
+            "meaningful",
+            "genuine connection",
+            "real connection",
+            "actual connection"
+          ],
+          "valence": "wish",
+          "total": 4,
+          "negative": 2,
+          "sampleQuoteId": "69090b0abfc9b98d5eec2171"
+        }
+      ]
+    },
+    {
+      "chip": "0% spam",
+      "oneLine": "Users describe Tinder as overrun by bots, scammers, OnlyFans/IG promo accounts, and fakes.",
+      "totalUnique": 320,
+      "shareOfAllReviews": "15.6%",
+      "signals": [
+        {
+          "name": "fake profiles",
+          "keywords": [
+            "fake profile",
+            "fake account",
+            "fake people",
+            "fake user",
+            "fake match"
+          ],
+          "valence": "anti",
+          "total": 94,
+          "negative": 78,
+          "sampleQuoteId": "622270ca445f5107dca8844f"
+        },
+        {
+          "name": "bots",
+          "keywords": [
+            "bot ",
+            "bots",
+            "automated",
+            "ai profile"
+          ],
+          "valence": "anti",
+          "total": 72,
+          "negative": 68,
+          "sampleQuoteId": "68fdb9f70b0948418582b419"
+        },
+        {
+          "name": "scammers",
+          "keywords": [
+            "scam",
+            "scammer",
+            "fraud",
+            "fraudulent",
+            "phishing"
+          ],
+          "valence": "anti",
+          "total": 151,
+          "negative": 134,
+          "sampleQuoteId": "68fe5a92db6e63200773992c"
+        },
+        {
+          "name": "OnlyFans / IG / Snapchat promo",
+          "keywords": [
+            "onlyfans",
+            "only fans",
+            "of girl",
+            "snapchat girl",
+            "instagram promo",
+            "promotion",
+            "sex worker",
+            "escort"
+          ],
+          "valence": "anti",
+          "total": 25,
+          "negative": 21,
+          "sampleQuoteId": "69404cd8c028782d22748f4c"
+        },
+        {
+          "name": "crypto / pig-butchering",
+          "keywords": [
+            "crypto",
+            "bitcoin",
+            "investment scam"
+          ],
+          "valence": "anti",
+          "total": 20,
+          "negative": 19,
+          "sampleQuoteId": "69a4a89aa17d108c852fa201"
+        },
+        {
+          "name": "WhatsApp / Telegram move-off",
+          "keywords": [
+            "whatsapp",
+            "telegram"
+          ],
+          "valence": "anti",
+          "total": 30,
+          "negative": 26,
+          "sampleQuoteId": "68ff1ccae01c2c5c67c39550"
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "name": "Money — premium / Gold / Platinum / Plus",
+      "total": 220,
+      "negative": 190
+    },
+    {
+      "name": "Trust — scammers & fraud",
+      "total": 150,
+      "negative": 133
+    },
+    {
+      "name": "Algorithm — ELO / shadowban / unfair",
+      "total": 129,
+      "negative": 113
+    },
+    {
+      "name": "Support — no human, no response",
+      "total": 105,
+      "negative": 96
+    },
+    {
+      "name": "Money — boost / Super Like",
+      "total": 104,
+      "negative": 90
+    },
+    {
+      "name": "Trust — fakes & catfish",
+      "total": 97,
+      "negative": 80
+    },
+    {
+      "name": "Money — billing, refund, cancel",
+      "total": 74,
+      "negative": 68
+    },
+    {
+      "name": "Trust — bots & automation",
+      "total": 71,
+      "negative": 67
+    },
+    {
+      "name": "Visibility — no matches / no likes",
+      "total": 42,
+      "negative": 40
+    },
+    {
+      "name": "Bans — unjust account ban",
+      "total": 42,
+      "negative": 38
+    },
+    {
+      "name": "Money — paywall / pay-to-win",
+      "total": 35,
+      "negative": 30
+    },
+    {
+      "name": "Onboarding — photo / ID verification fail",
+      "total": 6,
+      "negative": 6
+    }
+  ],
+  "yoyTheme": [
+    {
+      "name": "Money — premium / Gold / Platinum / Plus",
+      "shares": {
+        "2024": 9.5,
+        "2025": 13.7,
+        "2026": 11.6
+      }
+    },
+    {
+      "name": "Money — billing, refund, cancel",
+      "shares": {
+        "2024": 0.6,
+        "2025": 4.4,
+        "2026": 11.1
+      }
+    },
+    {
+      "name": "Money — paywall / pay-to-win",
+      "shares": {
+        "2024": 1.1,
+        "2025": 2.1,
+        "2026": 4.9
+      }
+    },
+    {
+      "name": "Money — boost / Super Like",
+      "shares": {
+        "2024": 7.6,
+        "2025": 4.1,
+        "2026": 3.1
+      }
+    },
+    {
+      "name": "Trust — fakes & catfish",
+      "shares": {
+        "2024": 1.4,
+        "2025": 7.6,
+        "2026": 7.1
+      }
+    },
+    {
+      "name": "Trust — bots & automation",
+      "shares": {
+        "2024": 1.7,
+        "2025": 5,
+        "2026": 7.1
+      }
+    },
+    {
+      "name": "Trust — scammers & fraud",
+      "shares": {
+        "2024": 3.9,
+        "2025": 9.4,
+        "2026": 15.1
+      }
+    },
+    {
+      "name": "Algorithm — ELO / shadowban / unfair",
+      "shares": {
+        "2024": 8.7,
+        "2025": 4.6,
+        "2026": 8.9
+      }
+    },
+    {
+      "name": "Visibility — no matches / no likes",
+      "shares": {
+        "2024": 1.4,
+        "2025": 2.2,
+        "2026": 4.4
+      }
+    },
+    {
+      "name": "Bans — unjust account ban",
+      "shares": {
+        "2024": 1.4,
+        "2025": 1.9,
+        "2026": 3.1
+      }
+    },
+    {
+      "name": "Support — no human, no response",
+      "shares": {
+        "2024": 3.1,
+        "2025": 6.8,
+        "2026": 9.8
+      }
+    },
+    {
+      "name": "Onboarding — photo / ID verification fail",
+      "shares": {
+        "2024": 0,
+        "2025": 0.3,
+        "2026": 1.3
+      }
+    }
+  ],
+  "meaningfulQuarterlyTrend": {
+    "2020Q3": 2.685,
+    "2020Q4": 2.364,
+    "2021Q2": 2.25,
+    "2021Q3": 2.667,
+    "2021Q4": 1.816,
+    "2022Q1": 1.737,
+    "2022Q3": 2.042,
+    "2022Q4": 1.605,
+    "2023Q1": 1.688,
+    "2023Q2": 1.783,
+    "2023Q3": 1.521,
+    "2023Q4": 1.651,
+    "2024Q1": 1.294,
+    "2024Q2": 1.709,
+    "2024Q3": 1.517,
+    "2024Q4": 1.336,
+    "2025Q1": 1.172,
+    "2025Q2": 1.127,
+    "2025Q3": 1.144,
+    "2025Q4": 1.173,
+    "2026Q1": 1.173,
+    "2026Q2": 1.038
+  },
+  "countryRageMap": [
+    {
+      "c": "BE",
+      "n": 59,
+      "avg": 1.22,
+      "oneShare": 88
+    },
+    {
+      "c": "SE",
+      "n": 69,
+      "avg": 1.26,
+      "oneShare": 87
+    },
+    {
+      "c": "DK",
+      "n": 235,
+      "avg": 1.31,
+      "oneShare": 86
+    },
+    {
+      "c": "ES",
+      "n": 199,
+      "avg": 1.33,
+      "oneShare": 86
+    },
+    {
+      "c": "NL",
+      "n": 190,
+      "avg": 1.34,
+      "oneShare": 86
+    },
+    {
+      "c": "IT",
+      "n": 252,
+      "avg": 1.52,
+      "oneShare": 80
+    },
+    {
+      "c": "FR",
+      "n": 223,
+      "avg": 1.44,
+      "oneShare": 79
+    },
+    {
+      "c": "DE",
+      "n": 235,
+      "avg": 1.85,
+      "oneShare": 64
+    },
+    {
+      "c": "GB",
+      "n": 160,
+      "avg": 2.16,
+      "oneShare": 49
+    },
+    {
+      "c": "US",
+      "n": 88,
+      "avg": 2.48,
+      "oneShare": 36
+    }
+  ],
+  "competitorMentions": {
+    "Bumble": 14,
+    "Hinge": 9,
+    "OkCupid": 7,
+    "Match.com": 5,
+    "POF": 4,
+    "Plenty of Fish": 0,
+    "Badoo": 14,
+    "Grindr": 0,
+    "Feeld": 0,
+    "Coffee Meets Bagel": 0,
+    "Boo": 1,
+    "Clover": 0
+  },
+  "replyRate": 0,
+  "latency": {
+    "median": 1,
+    "sameDayShare": "66.1%"
+  }
+}

@@ -1,0 +1,1132 @@
+{
+  "domain": "tinder.com",
+  "scrapedAt": "2026-05-02T20:24:54.477Z",
+  "businessUnit": {
+    "id": "519736b900006400053382d6",
+    "displayName": "Tinder",
+    "identifyingName": "tinder.com",
+    "trustScore": 1.2,
+    "stars": 1,
+    "numberOfReviews": 4882,
+    "numberOfFilteredReviews": 4623,
+    "websiteUrl": "https://tinder.com",
+    "websiteTitle": "tinder.com",
+    "profileImageUrl": "//s3-eu-west-1.amazonaws.com/tpd/screenshots/519736b900006400053382d6/198x149.png",
+    "isClaimed": false,
+    "isClosed": false,
+    "isCollectingReviews": false,
+    "hasCollectedIncentivisedReviews": false,
+    "contactInfo": {
+      "email": "",
+      "address": "",
+      "city": "",
+      "country": "GB",
+      "phone": "",
+      "zipCode": ""
+    },
+    "categories": [
+      {
+        "id": "dating_service",
+        "name": "Dating Service",
+        "rank": "undefined",
+        "cardinality": "undefined",
+        "isPrimary": false
+      },
+      {
+        "id": "adult_dating_service",
+        "name": "Adult Dating Service",
+        "rank": "undefined",
+        "cardinality": "undefined",
+        "isPrimary": true
+      }
+    ],
+    "breadcrumb": {
+      "topLevelId": "events_entertainment",
+      "topLevelDisplayName": "Events & Entertainment",
+      "midLevelId": "adult_entertainment",
+      "midLevelDisplayName": "Adult Entertainment",
+      "bottomLevelId": "adult_dating_service",
+      "bottomLevelDisplayName": "Adult Dating Service"
+    },
+    "verification": {
+      "verifiedByGoogle": false,
+      "verifiedPaymentMethod": false,
+      "verifiedUserIdentity": false
+    },
+    "consumerAlerts": [],
+    "replyBehavior": {
+      "averageDaysToReply": 0,
+      "lastReplyToNegativeReview": null,
+      "negativeReviewsWithRepliesCount": 0,
+      "replyPercentage": 0,
+      "totalNegativeReviewsCount": 715
+    },
+    "languageBreakdown": [
+      {
+        "isoCode": "all",
+        "reviewCount": 4623,
+        "displayName": "all"
+      },
+      {
+        "isoCode": "co",
+        "reviewCount": 1,
+        "displayName": "Corsican"
+      },
+      {
+        "isoCode": "cs",
+        "reviewCount": 1,
+        "displayName": "čeština"
+      },
+      {
+        "isoCode": "da",
+        "reviewCount": 263,
+        "displayName": "dansk"
+      },
+      {
+        "isoCode": "de",
+        "reviewCount": 770,
+        "displayName": "Deutsch"
+      },
+      {
+        "isoCode": "en",
+        "reviewCount": 1789,
+        "displayName": "English"
+      },
+      {
+        "isoCode": "es",
+        "reviewCount": 247,
+        "displayName": "español"
+      },
+      {
+        "isoCode": "fi",
+        "reviewCount": 4,
+        "displayName": "suomi"
+      },
+      {
+        "isoCode": "fr",
+        "reviewCount": 658,
+        "displayName": "français"
+      },
+      {
+        "isoCode": "it",
+        "reviewCount": 469,
+        "displayName": "italiano"
+      },
+      {
+        "isoCode": "mfe",
+        "reviewCount": 1,
+        "displayName": "kreol morisien"
+      },
+      {
+        "isoCode": "nl",
+        "reviewCount": 304,
+        "displayName": "Nederlands"
+      },
+      {
+        "isoCode": "no",
+        "reviewCount": 16,
+        "displayName": "norsk"
+      },
+      {
+        "isoCode": "pl",
+        "reviewCount": 11,
+        "displayName": "polski"
+      },
+      {
+        "isoCode": "pt",
+        "reviewCount": 16,
+        "displayName": "português"
+      },
+      {
+        "isoCode": "ru",
+        "reviewCount": 10,
+        "displayName": "русский"
+      },
+      {
+        "isoCode": "sv",
+        "reviewCount": 62,
+        "displayName": "svenska"
+      },
+      {
+        "isoCode": "zu",
+        "reviewCount": 1,
+        "displayName": "isiZulu"
+      }
+    ]
+  },
+  "uniqueReviewsScraped": 2045,
+  "resumedFromPriorRuns": 2045,
+  "newThisRun": 0,
+  "claimedTotal": 4882,
+  "coverage": "41.9%",
+  "stillCappedSlices": [
+    {
+      "stars": "1",
+      "languages": "da"
+    },
+    {
+      "stars": "1",
+      "languages": "de"
+    },
+    {
+      "stars": "1",
+      "languages": "en"
+    },
+    {
+      "stars": "1",
+      "languages": "en",
+      "date": "last12months"
+    },
+    {
+      "stars": "1",
+      "languages": "es"
+    },
+    {
+      "stars": "1",
+      "languages": "fr"
+    },
+    {
+      "stars": "1",
+      "languages": "it"
+    },
+    {
+      "stars": "1",
+      "languages": "nl"
+    }
+  ],
+  "slices": [
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "co"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "cs"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "da"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "da",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "da",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "da",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "da",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "de"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "de",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "de",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "de",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "de",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 8
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "en"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "en",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "en",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 4
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "en",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 7
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "en",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "es"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "es",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "es",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "es",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "es",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fi"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fr"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fr",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fr",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fr",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "fr",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 7
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "it"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "it",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "it",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "it",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "it",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 4
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "mfe"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "nl"
+      },
+      "added": 0,
+      "pagesFetched": 10
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "nl",
+        "date": "last30days"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "nl",
+        "date": "last3months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "nl",
+        "date": "last6months"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "nl",
+        "date": "last12months"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "no"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "pl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "pt"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "ru"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "sv"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "1",
+        "languages": "zu"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "co"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "cs"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "da"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "de"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "en"
+      },
+      "added": 0,
+      "pagesFetched": 4
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "es"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "fi"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "fr"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "it"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "mfe"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "nl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "no"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "pl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "pt"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "ru"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "sv"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "2",
+        "languages": "zu"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "co"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "cs"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "da"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "de"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "en"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "es"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "fi"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "fr"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "it"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "mfe"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "nl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "no"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "pl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "pt"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "ru"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "sv"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "3",
+        "languages": "zu"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "co"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "cs"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "da"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "de"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "en"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "es"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "fi"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "fr"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "it"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "mfe"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "nl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "no"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "pl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "pt"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "ru"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "sv"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "4",
+        "languages": "zu"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "co"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "cs"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "da"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "de"
+      },
+      "added": 0,
+      "pagesFetched": 2
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "en"
+      },
+      "added": 0,
+      "pagesFetched": 3
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "es"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "fi"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "fr"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "it"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "mfe"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "nl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "no"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "pl"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "pt"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "ru"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "sv"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    },
+    {
+      "slice": {
+        "stars": "5",
+        "languages": "zu"
+      },
+      "added": 0,
+      "pagesFetched": 1
+    }
+  ],
+  "reviewsFile": "/Users/Yura/Documents/GitHub/ring/research/tinder-trustpilot/out/tinder.com-2026-05-02T20-13-53-106Z.jsonl"
+}
