@@ -63,7 +63,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT — sunset field couple */}
           <div className="absolute right-[5%] top-[40%] w-[170px] rotate-[6deg]">
             <span className="absolute -top-2.5 right-3 z-10 inline-flex items-center gap-1 rounded-md bg-hot px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.15em] text-bg shadow-[0_8px_24px_-6px_var(--hot)]">
               she said yes
@@ -91,7 +90,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* headline + sub + form */}
         <section className="relative z-30 mx-auto mt-6 flex w-full max-w-4xl shrink-0 flex-col items-center gap-4 px-6 text-center sm:mt-8">
           <h1 className="font-display font-extrabold text-[clamp(2.75rem,9vw,7rem)] leading-[1] tracking-[-0.04em] drop-shadow-[0_8px_28px_rgba(61,107,255,0.35)]">
             <span className="block whitespace-nowrap">one ring.</span>

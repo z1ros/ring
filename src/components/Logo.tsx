@@ -14,7 +14,6 @@ export function Logo({ className = "" }: { className?: string }) {
           </linearGradient>
         </defs>
 
-        {/* one continuous stroke: ring with a notch at top that curves into a tiny heart */}
         <path
           d="
             M 27 13.3
