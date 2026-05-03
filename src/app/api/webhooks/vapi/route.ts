@@ -24,23 +24,30 @@ type VapiBody = { message?: VapiMessage };
 export async function POST(request: Request) {
   const rawBody = await request.text();
 
+  // Opt-in HMAC verification. If VAPI_WEBHOOK_SECRET is set we enforce it;
+  // if not, we accept the request and log a warning. This way MVP testing
+  // works without needing to configure a secret on both sides, but production
+  // deployments can opt into signature verification by setting the env var
+  // (and the matching secret in the Vapi assistant config).
   const secret = process.env.VAPI_WEBHOOK_SECRET;
-  if (!secret) {
-    console.error("[vapi webhook] VAPI_WEBHOOK_SECRET is not set — refusing request");
-    return Response.json({ error: "server misconfigured" }, { status: 500 });
-  }
-  const sig = request.headers.get("x-vapi-signature") ?? "";
-  const expected = crypto
-    .createHmac("sha256", secret)
-    .update(rawBody)
-    .digest("hex");
-  const sigBuf = Buffer.from(sig, "hex");
-  const expectedBuf = Buffer.from(expected, "hex");
-  if (
-    sigBuf.length !== expectedBuf.length ||
-    !crypto.timingSafeEqual(sigBuf, expectedBuf)
-  ) {
-    return Response.json({ error: "bad signature" }, { status: 401 });
+  if (secret) {
+    const sig = request.headers.get("x-vapi-signature") ?? "";
+    const expected = crypto
+      .createHmac("sha256", secret)
+      .update(rawBody)
+      .digest("hex");
+    const sigBuf = Buffer.from(sig, "hex");
+    const expectedBuf = Buffer.from(expected, "hex");
+    if (
+      sigBuf.length !== expectedBuf.length ||
+      !crypto.timingSafeEqual(sigBuf, expectedBuf)
+    ) {
+      return Response.json({ error: "bad signature" }, { status: 401 });
+    }
+  } else {
+    console.warn(
+      "[vapi webhook] VAPI_WEBHOOK_SECRET not set — accepting unsigned request (MVP mode)",
+    );
   }
 
   let body: VapiBody;

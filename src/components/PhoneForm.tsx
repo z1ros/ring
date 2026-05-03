@@ -51,8 +51,18 @@ export function PhoneForm() {
           email: email.trim().toLowerCase(),
         }),
       });
-      const data = (await res.json()) as { error?: string };
-      if (!res.ok) throw new Error(data.error ?? "something broke");
+      const text = await res.text();
+      let data: { error?: string } = {};
+      if (text) {
+        try {
+          data = JSON.parse(text) as { error?: string };
+        } catch {
+          // server returned non-JSON (timeout, crash, edge error page, etc.)
+        }
+      }
+      if (!res.ok) {
+        throw new Error(data.error ?? `request failed (${res.status})`);
+      }
       setStep("ringing");
     } catch (err) {
       setError((err as Error).message);
