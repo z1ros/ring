@@ -25,18 +25,22 @@ export async function POST(request: Request) {
   const rawBody = await request.text();
 
   const secret = process.env.VAPI_WEBHOOK_SECRET;
-  if (secret) {
-    const sig = request.headers.get("x-vapi-signature") ?? "";
-    const expected = crypto
-      .createHmac("sha256", secret)
-      .update(rawBody)
-      .digest("hex");
-    if (
-      sig.length !== expected.length ||
-      !crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))
-    ) {
-      return Response.json({ error: "bad signature" }, { status: 401 });
-    }
+  if (!secret) {
+    console.error("[vapi webhook] VAPI_WEBHOOK_SECRET is not set — refusing request");
+    return Response.json({ error: "server misconfigured" }, { status: 500 });
+  }
+  const sig = request.headers.get("x-vapi-signature") ?? "";
+  const expected = crypto
+    .createHmac("sha256", secret)
+    .update(rawBody)
+    .digest("hex");
+  const sigBuf = Buffer.from(sig, "hex");
+  const expectedBuf = Buffer.from(expected, "hex");
+  if (
+    sigBuf.length !== expectedBuf.length ||
+    !crypto.timingSafeEqual(sigBuf, expectedBuf)
+  ) {
+    return Response.json({ error: "bad signature" }, { status: 401 });
   }
 
   let body: VapiBody;
@@ -57,39 +61,38 @@ export async function POST(request: Request) {
   const leadId = msg.call?.metadata?.leadId;
 
   if (!vapiCallId && !leadId) {
-    console.warn("[vapi webhook] payload had neither call.id nor metadata.leadId");
     return Response.json({ error: "no call id" }, { status: 400 });
   }
 
-  const lead = leadId
-    ? await prisma.lead.findUnique({ where: { id: leadId } })
-    : await prisma.lead.findUnique({ where: { vapiCallId: vapiCallId! } });
+  const lead = await prisma.lead.findFirst({
+    where: leadId ? { id: leadId } : { vapiCallId },
+  });
 
   if (!lead) {
-    console.warn("[vapi webhook] no matching lead", { vapiCallId, leadId });
     return Response.json({ error: "lead not found" }, { status: 404 });
   }
 
   const callData = {
     startedAt: msg.startedAt ? new Date(msg.startedAt) : null,
     endedAt: msg.endedAt ? new Date(msg.endedAt) : null,
-    durationSec: msg.durationSeconds ? Math.round(msg.durationSeconds) : null,
+    durationSec: msg.durationSeconds != null ? Math.round(msg.durationSeconds) : null,
     recordingUrl: msg.recordingUrl ?? msg.stereoRecordingUrl ?? null,
     transcript: msg.transcript ?? null,
     extracted: (msg.analysis?.structuredData ?? null) as Prisma.InputJsonValue,
     endedReason: msg.endedReason ?? null,
   };
 
-  await prisma.call.upsert({
-    where: { leadId: lead.id },
-    create: { leadId: lead.id, ...callData },
-    update: callData,
-  });
-
-  await prisma.lead.update({
-    where: { id: lead.id },
-    data: { status: "COMPLETED" },
-  });
+  await prisma.$transaction([
+    prisma.call.upsert({
+      where: { leadId: lead.id },
+      create: { leadId: lead.id, ...callData },
+      update: callData,
+    }),
+    prisma.lead.update({
+      where: { id: lead.id },
+      data: { status: "COMPLETED" },
+    }),
+  ]);
 
   return Response.json({ ok: true });
 }

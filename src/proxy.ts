@@ -1,12 +1,8 @@
-import { updateSession } from "@/lib/supabase/proxy";
-import type { NextRequest } from "next/server";
+export { updateSession as proxy } from "@/lib/supabase/proxy";
 
-export async function proxy(request: NextRequest) {
-  return await updateSession(request);
-}
-
+// Only run auth-cookie refresh on admin surfaces. Public pages (landing,
+// intake API, vapi webhook) don't need a session, so skipping them avoids
+// a Supabase round-trip on every public request.
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
-  ],
+  matcher: ["/admin/:path*", "/api/admin/:path*"],
 };

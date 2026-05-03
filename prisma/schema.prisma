@@ -1,5 +1,3 @@
-// Prisma schema — https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -9,25 +7,23 @@ datasource db {
   provider = "postgresql"
 }
 
-// One row per phone number we've ever ringed.
-// Phone is the identity — no separate user/account table for MVP.
+// beta: phone is non-unique on purpose — duplicate submissions are allowed for experimentation
 model Lead {
   id         String     @id @default(cuid())
-  phone      String     @unique // E.164, e.g. +14155551234
-  email      String? // captured during the call, optional until then
+  phone      String
+  email      String?
   status     LeadStatus @default(QUEUED)
-  vapiCallId String?    @unique // returned when we hand the call off to vapi
+  vapiCallId String?    @unique
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
 
   call Call?
 
+  @@index([phone])
   @@index([status])
   @@index([createdAt])
 }
 
-// One row per completed (or attempted) outbound call.
-// Created when vapi posts the end-of-call webhook.
 model Call {
   id           String    @id @default(cuid())
   leadId       String    @unique
@@ -36,16 +32,18 @@ model Call {
   endedAt      DateTime?
   durationSec  Int?
   recordingUrl String?
-  transcript   String? // full text, plain
-  extracted    Json? // slot-filled object: { first_name, age, city, looking_for, ideal_first_date, dealbreakers, references[], consent_record }
-  endedReason  String? // 'customer-ended-call' | 'voicemail' | 'assistant-error' | ...
+  transcript   String?
+  // shape: { first_name, age, city, looking_for, ideal_first_date, dealbreakers, references[], consent_record }
+  extracted    Json?
+  // vapi value: 'customer-ended-call' | 'voicemail' | 'assistant-error' | ...
+  endedReason  String?
   createdAt    DateTime  @default(now())
 }
 
 enum LeadStatus {
-  QUEUED // phone captured, call not yet placed
-  CALLING // vapi has the call in flight
-  COMPLETED // call ended, data extracted
-  FAILED // bad number, voicemail-only, hangup before any data
-  EMAILED // recap delivered
+  QUEUED
+  CALLING
+  COMPLETED
+  FAILED
+  EMAILED
 }

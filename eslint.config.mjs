@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Research scripts are exploratory, not shipped — let them use `any`.
+    "research/**",
+    "src/generated/**",
   ]),
 ]);
 

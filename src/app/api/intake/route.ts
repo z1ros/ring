@@ -30,10 +30,9 @@ export async function POST(request: Request) {
   }
   const email = body.email.trim().toLowerCase();
 
-  const lead = await prisma.lead.upsert({
-    where: { phone },
-    update: { status: "QUEUED", email },
-    create: { phone, email, status: "QUEUED" },
+  // beta: always insert — duplicate phone/email is intentional for experimentation
+  const lead = await prisma.lead.create({
+    data: { phone, email, status: "QUEUED" },
   });
 
   try {

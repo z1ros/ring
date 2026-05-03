@@ -62,24 +62,10 @@ export function PhoneForm() {
 
   if (step === "ringing") {
     return (
-      <div className="mt-1 flex w-full max-w-md flex-col items-center gap-2 rounded-2xl border border-aqua/60 bg-ink/50 px-6 py-5 text-center backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_20px_60px_-20px_rgba(108,240,255,0.6)]">
-        <div className="flex h-6 items-end gap-1" aria-hidden>
-          {[0, 1, 2, 3, 4].map((i) => (
-            <span
-              key={i}
-              className="w-1 rounded-full bg-aqua"
-              style={{
-                animation: `wave 1.1s ease-in-out ${i * 0.12}s infinite`,
-                height: "100%",
-              }}
-            />
-          ))}
-        </div>
-        <p className="font-display text-xl font-bold text-bg">ringing u now…</p>
-        <p className="text-xs text-bg/65">
-          pick up + tell us ur name. recap goes to {email.trim().toLowerCase()}.
+      <div className="mt-1 w-full max-w-md rounded-full border border-aqua/60 bg-ink/50 px-6 py-3 text-center backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_20px_60px_-20px_rgba(108,240,255,0.6)]">
+        <p className="text-sm font-medium text-bg">
+          we&apos;ll be in touch with u. soon.
         </p>
-        <style>{`@keyframes wave{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}`}</style>
       </div>
     );
   }
@@ -137,7 +123,7 @@ export function PhoneForm() {
           <button
             type="submit"
             disabled={submitting || !emailValid}
-            className="group/btn relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-bg to-bg/90 px-5 py-2.5 text-sm font-bold text-ink transition-all duration-500 ease-out hover:from-aqua hover:to-aqua/85 hover:text-ink hover:shadow-[0_8px_24px_-6px_var(--aqua)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:from-bg disabled:hover:to-bg/90 disabled:hover:shadow-none"
+            className="group/btn relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-bg to-bg/90 px-5 py-2.5 text-sm font-bold text-ink transition-all duration-500 ease-out hover:rounded-xl hover:from-aqua hover:to-aqua/85 hover:text-ink hover:shadow-[0_8px_24px_-6px_var(--aqua)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:rounded-full disabled:hover:from-bg disabled:hover:to-bg/90 disabled:hover:shadow-none"
           >
             {submitting ? (
               <span className="flex items-center gap-1" aria-label="loading">
@@ -156,7 +142,7 @@ export function PhoneForm() {
           </button>
         </form>
         <p className="mt-2 text-center text-[11px] text-bg/60">
-          we'll send ur date deets here. no newsletter, no spam, ever.
+          we&apos;ll send ur date deets here. no newsletter, no spam, ever.
         </p>
         {error && (
           <p className="mt-1 text-center text-[11px] text-hot" role="alert">
@@ -208,7 +194,7 @@ export function PhoneForm() {
         <button
           type="submit"
           disabled={!phoneValid}
-          className="group/btn relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-bg to-bg/90 px-5 py-2.5 text-sm font-bold text-ink transition-all duration-500 ease-out hover:from-hot hover:to-hot/85 hover:text-bg hover:shadow-[0_8px_24px_-6px_var(--hot)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:from-bg disabled:hover:to-bg/90 disabled:hover:text-ink disabled:hover:shadow-none"
+          className="group/btn relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-bg to-bg/90 px-5 py-2.5 text-sm font-bold text-ink transition-all duration-500 ease-out hover:rounded-xl hover:from-hot hover:to-hot/85 hover:text-bg hover:shadow-[0_8px_24px_-6px_var(--hot)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:rounded-full disabled:hover:from-bg disabled:hover:to-bg/90 disabled:hover:text-ink disabled:hover:shadow-none"
         >
           ring me
           <svg viewBox="0 0 16 16" className="size-3.5 transition-transform duration-500 ease-out group-hover/btn:translate-x-0.5" aria-hidden>
