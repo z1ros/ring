@@ -51,7 +51,11 @@ async function main() {
     stereoRecordingUrl?: string;
     summary?: string;
     analysis?: { structuredData?: Record<string, unknown>; summary?: string };
-    artifact?: { transcript?: string; recordingUrl?: string };
+    artifact?: {
+      transcript?: string;
+      recordingUrl?: string;
+      structuredOutputs?: Record<string, { name: string; result: unknown }>;
+    };
     messages?: unknown[];
   };
 
@@ -62,9 +66,19 @@ async function main() {
   console.log(`   transcript:    ${call.transcript ? `${call.transcript.length} chars` : "(none)"}`);
   console.log(`   recordingUrl:  ${call.recordingUrl ? "✅" : "❌"}`);
   console.log(`   analysis:      ${call.analysis ? "✅" : "❌"}`);
-  if (call.analysis?.structuredData) {
-    console.log(`   structured:    ✅`);
-    console.log(`   ${JSON.stringify(call.analysis.structuredData, null, 2).split("\n").map((l) => `   ${l}`).join("\n")}`);
+  // Flatten Vapi's per-output map: { uuid: {name, result} } → { name, age, ... }
+  const flat: Record<string, unknown> = {};
+  if (call.artifact?.structuredOutputs) {
+    for (const e of Object.values(call.artifact.structuredOutputs)) {
+      if (e?.name) flat[e.name] = e.result;
+    }
+  }
+  const extractedShape = Object.keys(flat).length > 0
+    ? flat
+    : call.analysis?.structuredData ?? null;
+  if (extractedShape && Object.keys(extractedShape).length > 0) {
+    console.log(`   structured:    ✅ ${Object.keys(extractedShape).length} fields`);
+    console.log(`   ${JSON.stringify(extractedShape, null, 2).split("\n").map((l) => `   ${l}`).join("\n")}`);
   } else {
     console.log(`   structured:    ❌`);
   }
@@ -100,6 +114,7 @@ async function main() {
       startedAt: call.startedAt,
       endedAt: call.endedAt,
       analysis: call.analysis ?? null,
+      artifact: { structuredOutputs: call.artifact?.structuredOutputs },
     },
   };
 

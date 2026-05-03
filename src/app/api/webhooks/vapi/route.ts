@@ -2,9 +2,15 @@ import crypto from "node:crypto";
 import { prisma } from "@/lib/prisma";
 import type { Prisma } from "@/generated/prisma/client";
 
+type StructuredOutputsMap = Record<string, { name: string; result: unknown }>;
+
 type VapiMessage = {
   type: string;
-  call?: { id?: string; metadata?: { leadId?: string } };
+  call?: {
+    id?: string;
+    metadata?: { leadId?: string };
+    artifact?: { structuredOutputs?: StructuredOutputsMap };
+  };
   endedReason?: string;
   transcript?: string;
   summary?: string;
@@ -13,11 +19,29 @@ type VapiMessage = {
   durationSeconds?: number;
   startedAt?: string;
   endedAt?: string;
-  analysis?: {
-    structuredData?: Record<string, unknown>;
-    summary?: string;
-  };
+  // Two shapes Vapi has used historically:
+  //   message.analysis.structuredData    → flat object (older / global analysis)
+  //   message.artifact.structuredOutputs → keyed-by-UUID map (per-output linking)
+  // We accept both.
+  analysis?: { structuredData?: Record<string, unknown>; summary?: string };
+  artifact?: { structuredOutputs?: StructuredOutputsMap };
 };
+
+/**
+ * Flatten Vapi's keyed structured outputs map into a normal object.
+ *   { "uuid": { name: "age", result: 24 }, "uuid": { name: "city", result: "Chicago" } }
+ *   → { age: 24, city: "Chicago" }
+ */
+function flattenStructuredOutputs(
+  map: StructuredOutputsMap | undefined,
+): Record<string, unknown> | null {
+  if (!map) return null;
+  const out: Record<string, unknown> = {};
+  for (const entry of Object.values(map)) {
+    if (entry?.name) out[entry.name] = entry.result;
+  }
+  return Object.keys(out).length > 0 ? out : null;
+}
 
 type VapiBody = { message?: VapiMessage };
 
@@ -79,13 +103,21 @@ export async function POST(request: Request) {
     return Response.json({ error: "lead not found" }, { status: 404 });
   }
 
+  // Try every place Vapi may have put the extraction: per-output map first
+  // (current shape), then global analysis (legacy / fallback).
+  const extracted =
+    flattenStructuredOutputs(msg.artifact?.structuredOutputs) ??
+    flattenStructuredOutputs(msg.call?.artifact?.structuredOutputs) ??
+    msg.analysis?.structuredData ??
+    null;
+
   const callData = {
     startedAt: msg.startedAt ? new Date(msg.startedAt) : null,
     endedAt: msg.endedAt ? new Date(msg.endedAt) : null,
     durationSec: msg.durationSeconds != null ? Math.round(msg.durationSeconds) : null,
     recordingUrl: msg.recordingUrl ?? msg.stereoRecordingUrl ?? null,
     transcript: msg.transcript ?? null,
-    extracted: (msg.analysis?.structuredData ?? null) as Prisma.InputJsonValue,
+    extracted: (extracted ?? null) as Prisma.InputJsonValue,
     endedReason: msg.endedReason ?? null,
   };
 

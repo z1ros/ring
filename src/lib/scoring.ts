@@ -36,13 +36,36 @@ export function isViableCandidate(
 
 // All score components return a value in [0, 1].
 
+// Coerce whatever Vapi returns for hobbies/shared_hobbies into a clean
+// string[]. Vapi's UI sometimes returns "climbing, cooking, vinyl" as a
+// comma-separated string instead of an array (depending on whether the field
+// type was set to Array or String). Handle both shapes + the rare object
+// shape ({0: "climbing", 1: "cooking"}) defensively.
+function asStringList(v: unknown): string[] {
+  if (Array.isArray(v)) {
+    return v.map((s) => String(s).toLowerCase().trim()).filter(Boolean);
+  }
+  if (typeof v === "string") {
+    return v
+      .split(/[,;|]+/)
+      .map((s) => s.toLowerCase().trim())
+      .filter(Boolean);
+  }
+  if (v && typeof v === "object") {
+    return Object.values(v as Record<string, unknown>)
+      .map((s) => String(s).toLowerCase().trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 function lower(arr: string[] | undefined): string[] {
   return (arr ?? []).map((s) => s.toLowerCase().trim()).filter(Boolean);
 }
 
 export function hobbyOverlap(a: ExtractedProfile, b: ExtractedProfile): number {
-  const aSet = new Set(lower(a.hobbies));
-  const bSet = new Set(lower(b.hobbies));
+  const aSet = new Set(asStringList(a.hobbies));
+  const bSet = new Set(asStringList(b.hobbies));
   if (aSet.size === 0 || bSet.size === 0) return 0;
   const intersection = [...aSet].filter((h) => bSet.has(h)).length;
   const union = new Set([...aSet, ...bSet]).size;
@@ -55,11 +78,11 @@ export function sharedHobbiesMatch(
   a: ExtractedProfile,
   b: ExtractedProfile,
 ): number {
-  const wants = lower(a.shared_hobbies);
+  const wants = asStringList(a.shared_hobbies);
   if (wants.length === 0) return 0.5;
 
   const bText = [
-    ...lower(b.hobbies),
+    ...asStringList(b.hobbies),
     (b.ideal_first_date ?? "").toLowerCase(),
     (b.type ?? "").toLowerCase(),
   ].join(" ");
@@ -84,7 +107,7 @@ export function dealbreakerClear(
   const dealbreaker = a.dealbreaker.toLowerCase();
 
   const bText = [
-    ...lower(b.hobbies),
+    ...asStringList(b.hobbies),
     (b.ideal_first_date ?? "").toLowerCase(),
     (b.type ?? "").toLowerCase(),
     (b.dealbreaker ?? "").toLowerCase(),

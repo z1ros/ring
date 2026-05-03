@@ -1,14 +1,16 @@
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "@/generated/prisma/client";
 import type { ExtractedProfile } from "@/lib/matching";
 import { AdminClient, type AdminLead } from "./admin-client";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminPage() {
+  // Pull the most recent completed call regardless of whether structured
+  // extraction populated `extracted` — we still want to show it on the admin
+  // page (just with empty profile fields) so the user knows the call landed.
   const [latestCall, totalCompleted] = await Promise.all([
     prisma.call.findFirst({
-      where: { lead: { status: "COMPLETED" }, extracted: { not: Prisma.JsonNull } },
+      where: { lead: { status: "COMPLETED" } },
       include: { lead: true },
       orderBy: [{ endedAt: "desc" }, { createdAt: "desc" }],
     }),
@@ -18,8 +20,9 @@ export default async function AdminPage() {
   ]);
 
   let latestLead: AdminLead | null = null;
-  if (latestCall?.extracted) {
-    const ex = latestCall.extracted as ExtractedProfile;
+  if (latestCall) {
+    // extracted may be null if structured outputs weren't linked at call time
+    const ex = (latestCall.extracted as ExtractedProfile | null) ?? {};
     const callEndedAt = latestCall.endedAt ?? latestCall.createdAt;
     latestLead = {
       id: latestCall.lead.id,

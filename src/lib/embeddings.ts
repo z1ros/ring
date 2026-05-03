@@ -3,11 +3,22 @@ import type { ExtractedProfile } from "./matching";
 
 const EMBEDDING_MODEL = "text-embedding-3-small";
 
+// Same shape-coercion as scoring.ts (could share, but profileToText is the
+// only consumer here and inlining keeps embeddings self-contained).
+function toList(v: unknown): string[] {
+  if (Array.isArray(v)) return v.map((s) => String(s).trim()).filter(Boolean);
+  if (typeof v === "string") return v.split(/[,;|]+/).map((s) => s.trim()).filter(Boolean);
+  if (v && typeof v === "object") return Object.values(v as Record<string, unknown>).map((s) => String(s).trim()).filter(Boolean);
+  return [];
+}
+
 export function profileToText(p: ExtractedProfile): string {
+  const hobbies = toList(p.hobbies);
+  const shared = toList(p.shared_hobbies);
   return [
     p.type && `attracted to: ${p.type}`,
-    p.hobbies && p.hobbies.length > 0 && `hobbies: ${p.hobbies.join(", ")}`,
-    p.shared_hobbies && p.shared_hobbies.length > 0 && `wants partner who: ${p.shared_hobbies.join(", ")}`,
+    hobbies.length > 0 && `hobbies: ${hobbies.join(", ")}`,
+    shared.length > 0 && `wants partner who: ${shared.join(", ")}`,
     p.ideal_first_date && `ideal first date: ${p.ideal_first_date}`,
     p.looking_for && `looking for: ${p.looking_for}`,
   ]
